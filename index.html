@@ -1,0 +1,39 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, viewport-fit=cover">
+  <title>Mother Flame</title>
+  <meta name="theme-color" content="#f3f3f3" media="(prefers-color-scheme: light)">
+  <meta name="theme-color" content="#151515" media="(prefers-color-scheme: dark)">
+  <meta name="apple-mobile-web-app-capable" content="yes">
+  <meta name="mobile-web-app-capable" content="yes">
+  <meta name="apple-mobile-web-app-status-bar-style" content="default">
+  <meta name="apple-mobile-web-app-title" content="Mother Flame">
+  <link rel="manifest" href="manifest-dark.webmanifest" id="manifest">
+  <link rel="icon" href="icons/icon-192-dark.png">
+  <link rel="apple-touch-icon" href="icons/apple-touch-icon-dark.png" id="touch-icon">
+  <script>
+    // before first paint: appearance (auto/light/dark) and the install icon (light/dark), both chosen in Settings
+    try {
+      var theme = localStorage.getItem('vault.theme');
+      if (theme === 'light' || theme === 'dark') document.documentElement.dataset.theme = theme;
+      if (localStorage.getItem('vault.icon') === 'light') {
+        document.getElementById('touch-icon').href = 'icons/apple-touch-icon.png';
+        document.getElementById('manifest').href = 'manifest.webmanifest';
+      }
+    } catch (e) {}
+  </script>
+  <link rel="preload" href="fonts/inter-latin-wght-normal.woff2" as="font" type="font/woff2" crossorigin>
+  <link rel="preload" href="fonts/hedvig-letters-serif-latin-400-normal.woff2" as="font" type="font/woff2" crossorigin>
+  <link rel="preload" href="fonts/bebas-neue-latin-400-normal.woff2" as="font" type="font/woff2" crossorigin>
+  <link rel="stylesheet" href="css/app.css?v=1794066801">
+</head>
+<body>
+  <div id="app">
+    <aside id="side"></aside>
+    <main id="main"></main>
+  </div>
+  <script type="module" src="js/main.js?v=1794066801"></script>
+</body>
+</html>
